@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: day2configuration-project-template
+  name: day2configuration-logging-stack
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,8 +9,9 @@ spec:
     namespace: ''
     server: 'https://kubernetes.default.svc'
   source:
+    path: {{ .Values.path }}
     repoURL: >-
-      https://github.com/Redhat-Openshift-GitOps-Workshop/day2configuration-project-template
+      https://github.com/Redhat-Openshift-GitOps-Workshop/day2configuration-logging-stack
     targetRevision: main
   project: default
   syncPolicy:
