@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: day2configuration-operators
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: {{ .Values.path }}
+    repoURL: >-
+      https://github.com/Redhat-Openshift-GitOps-Workshop/day2configuration-operators
+    targetRevision: main
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
