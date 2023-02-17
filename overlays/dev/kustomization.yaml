@@ -6,7 +6,7 @@ bases:
 - ../../base
 
 patchesStrategicMerge:
-#- day2configuration-bitnami-sealed-secret.yaml
+- day2configuration-bitnami-sealed-secret.yaml
 - day2configuration-identity-providers.yaml
 - day2configuration-logging-stack.yaml
 - day2configuration-monitoring-stack.yaml
