@@ -4,15 +4,6 @@ metadata:
   name: day2configuration-identity-providers
 spec:
   destination:
-    name: ''
-    namespace: ''
-    server: 'https://kubernetes.default.svc'
+    namespace: openshift-gitops
   source:
-    repoURL: >-
-      https://github.com/Redhat-Openshift-GitOps-Workshop/day2configuration-identity-providers
-    targetRevision: main
-  project: default
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: true
+    path: overlays/dev

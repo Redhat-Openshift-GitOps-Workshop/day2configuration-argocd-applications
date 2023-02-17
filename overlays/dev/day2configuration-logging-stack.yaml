@@ -3,5 +3,7 @@ kind: Application
 metadata:
   name: day2configuration-logging-stack
 spec:
+  destination:
+    namespace: openshift-gitops
   source:
     path: overlays/dev
