@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: day2configuration-security
+  name: day2configuration-identity-providers
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,8 +9,9 @@ spec:
     namespace: ''
     server: 'https://kubernetes.default.svc'
   source:
+    path: {{ .Values.path }}
     repoURL: >-
-      https://github.com/Redhat-Openshift-GitOps-Workshop/day2configuration-security
+      https://github.com/Redhat-Openshift-GitOps-Workshop/day2configuration-identity-providers
     targetRevision: main
   project: default
   syncPolicy:
